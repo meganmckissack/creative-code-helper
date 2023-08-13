@@ -108,7 +108,7 @@ export const AskQuestion = ({ children }: AskQuestionProps) => {
         <div>
           {messages.map((message, index) => {
             return (
-              <output className='block bg-slate-100 italic whitespace-normal' key={index}>
+              <output className='block bg-slate-100 italic whitespace-normal p-2' key={index}>
                 <strong>{message.role === 'assistant' ? 'Eliza' : 'You'}</strong>
                 <div>
                   <ReactMarkdown>{message.content}</ReactMarkdown>
@@ -118,7 +118,7 @@ export const AskQuestion = ({ children }: AskQuestionProps) => {
           })}
 
           {isLoading && (
-            <output>
+            <output className='block bg-slate-100 italic whitespace-normal p-2'>
               <strong>Eliza:</strong>
               <div>
                 <ReactMarkdown>Thinking...</ReactMarkdown>
