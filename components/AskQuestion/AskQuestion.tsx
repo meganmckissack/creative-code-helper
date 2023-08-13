@@ -92,13 +92,13 @@ export const AskQuestion = ({ children }: AskQuestionProps) => {
   }
 
   return (
-    <div>
+    <div className='mt-[3rem]'>
       <div ref={ref}>
         {children}
       </div>
 
-      <div className={'panel '}>
-        <div className="title">
+      <div>
+        <div className='py-2'>
           <h3>Ask Eliza</h3>
           <p>
             Got a question? Ask Eliza a question and they will try to help you out!
@@ -108,7 +108,7 @@ export const AskQuestion = ({ children }: AskQuestionProps) => {
         <div>
           {messages.map((message, index) => {
             return (
-              <output key={index}>
+              <output className='block bg-slate-100 italic whitespace-normal' key={index}>
                 <strong>{message.role === 'assistant' ? 'Eliza' : 'You'}</strong>
                 <div>
                   <ReactMarkdown>{message.content}</ReactMarkdown>
@@ -127,14 +127,14 @@ export const AskQuestion = ({ children }: AskQuestionProps) => {
           )}
         </div>
 
-        <form onSubmit={submit}>
-          <input
+        <form className='bg-slate-100 pt-10 pb-10 shadow-md rounded' onSubmit={submit}>
+          <input className='text-black p-2 ml-6 shadow border-2 border-purple-200 appearance-none border rounded w-1/2 leading-tight focus:outline-none focus:shadow-outline'
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder="e.g. what is a margin?"
+            placeholder="e.g. what is a function?"
           />
-          <button type="submit" disabled={isLoading}>
+          <button className='font-bold ml-5 py-2 px-4 border-2 border-purple-200 shadow-md rounded focus:outline-none focus:shadow-outline' type="submit" disabled={isLoading}>
             Ask
           </button>
         </form>

@@ -57,21 +57,21 @@ export const Explain = ({ children }: ExplainProps) => {
   }
 
   return (
-    <div>
+    <div className='relative'>
       {/* display the content */}
       <div ref={ref}>
         {children}
       </div>
 
       {/* the helper */}
-      <div>
+      <div className='absolute mt-0 ml-[100%] w-[10rem] p-1.5 whitespace-normal'>
         {output ? (
-          <output>{output}</output>
+          <output className='block bg-purple-500 p-1 rounded text-slate-100 w-[12rem]'>{output}</output>
         ) : isLoading ? (
           <output>Thinking&hellip;</output>
         ) : (
           <a href="#" onClick={submit}>
-            Huh?
+            More explanation
           </a>
         )}
       </div>

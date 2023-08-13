@@ -6,11 +6,12 @@
 
 // using a library and a custom theme
 import SyntaxHighlighter from 'react-syntax-highlighter';
-// import { theme } from './theme'
+import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 
 export const CodeBlock = ({ code, language }: { code: string; language: 'xml' | 'css' | 'javascript' }) => {
   return (
-    <SyntaxHighlighter language={language} >
+    <SyntaxHighlighter language={language} style={githubGist} >
       {code}
     </SyntaxHighlighter>
   )
